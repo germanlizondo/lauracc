@@ -10,7 +10,7 @@ mongoose.connect('mongodb://admin:public00@ds155699.mlab.com:55699/lauracc')
 
 
 //settings
-app.set('port',process.env.PORT || 3000);
+
 
 
 //Middlewares
@@ -36,6 +36,7 @@ app.use(express.static(__dirname+'/public'));
 
 
 
-app.listen(app.get('port'),()=>{
-    console.log('Server init on Port',app.get('port'));
-});
+var server = app.listen(process.env.PORT || 3000, function () {
+    var port = server.address().port;
+    console.log("Express is working on port " + port);
+  });
