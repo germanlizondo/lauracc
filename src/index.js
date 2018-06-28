@@ -18,10 +18,11 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //Routes
-app.get('/hola',(req,res)=>{
-    res.send("hola");
-});
+app.get('/',(req,res)=>{
 
+    res.sendFile(__dirname+'/public/index.html');
+  
+  });
 
 //Static Files
 
