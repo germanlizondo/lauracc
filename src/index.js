@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 
 const app = express();
-mongoose.connect('mongodb://localhost/lauracc')
+mongoose.connect('mongodb://admin:public00@ds155699.mlab.com:55699/lauracc')
 .then(db => console.log('Conected to Mongo OK!'))
 .catch(err=> console.error(err));
 
