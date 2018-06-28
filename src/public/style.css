@@ -1,0 +1,230 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+.page{
+   position: absolute;
+   width: inherit;
+   top: 0;
+   left: 0;
+   right: 0;
+   
+}
+
+
+.img-fluid{
+    border:none;
+}
+/* NAVBAR */
+
+
+.navbar{
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    -webkit-box-shadow: 0px 2.5px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 2.5px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 2.5px 5px 0px rgba(0,0,0,0.75);
+
+}
+
+.navbar a{
+    color: 	  black;
+    transition: 0.3s;
+}
+.navbar a:hover{
+    text-decoration: none;
+    color: #ffffff;
+   
+}
+
+
+
+.navbar li{
+   transition: 0.3s;
+}
+.navbar li:hover {
+
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+.navbar-toggler {
+    border: none;
+    background: transparent !important;
+  }
+  
+  .navbar-toggler:focus {
+    outline: none;
+    background: transparent !important;
+  }
+  
+  .navbar-toggler .icon-bar {
+    background-color: black;
+    transform: rotate(0deg) translate(0px, 0px);
+    transition: ease all .2s;
+  }
+  
+  .navbar-toggler .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+  }
+  
+  .navbar-toggler .icon-bar+.icon-bar {
+    margin-top: 4px;
+  }
+  
+  .icon-bar:nth-child(2) {
+    width: 16px;
+    transition: ease all .2s;
+  }
+  
+  .navbar-toggler:hover>.icon-bar:nth-child(2) {
+    width: 22px;
+    transition: ease all .2s;
+  }
+  
+  .navbar-toggler:active>.icon-bar:nth-child(2) {
+    width: 22px;
+    transition: ease all .2s;
+  }
+  
+  /* .navbar-toggler:not(.collapsed) .icon-bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 4px);
+    transition: ease all .2s;
+  }
+  
+  .navbar-toggler:not(.collapsed) .icon-bar:nth-child(2) {
+    opacity: 0;
+    transition: ease all .2s;
+  }
+  
+  .navbar-toggler:not(.collapsed) .icon-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+    transition: ease all .2s;
+  } */
+/*FINISH NAVBAR */
+
+/*HOME*/
+
+h1{
+    color: aliceblue;
+}
+
+.home1{
+    min-height: 30em;
+    background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
+
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 5em;
+   padding-top: 10em;
+    width: 100%;
+}
+.home2{
+    min-height: 30em;
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 5em;
+       padding-top: 5em;
+        width: 100%;
+    }
+
+    .home2 h4{
+        color: black;
+    }
+
+    .home3{
+        min-height: 30em;
+        background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 5em;
+        padding-top: 5em;
+            width: 100%;
+        }
+    
+        .home3 h4{
+            color: white;
+        }
+    
+
+        .home4{
+            min-height: 30em;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-bottom: 5em;
+            padding-top: 5em;
+                width: 100%;
+            }
+        
+            .home4 h4 {
+                color: black;
+            }  
+            .home4 h1{
+                color: black;
+            }
+
+            .home5{
+                min-height: 30em;
+                background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding-bottom: 5em;
+                padding-top: 5em;
+                    width: 100%;
+                }
+            
+                .home5 h4 {
+                    color: white;
+                }  
+                .home5 h1{
+                    color: white;
+                }
+
+
+
+
+/* ESPAI */
+
+.espai1{
+    min-height: 30em;
+    background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 5em;
+    padding-top: 12.5em;
+        width: 100%;
+    }
+
+.espai1 h4{
+    color: white;
+}
+
+    .espai2{
+        padding-top:2.5em;
+        padding-bottom: 2.5em;
+    }
+
+
+/* BLOG */
+
+.blog1{
+    min-height: 30em;
+    background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 5em;
+    padding-top: 12.5em;
+        width: 100%;
+    }
+
+   
