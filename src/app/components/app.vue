@@ -13,19 +13,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mx-auto order-0">
      
-      <li class="nav-item">
+      <li class="nav-item list-responsive">
         <a class="nav-link" ><router-link :to="{ name: 'activitats'}">Activitats</router-link></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item list-responsive">
         <a class="nav-link"><router-link :to="{ name: 'ip'}">Integral Presence</router-link></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item list-responsive">
         <a class="nav-link"><router-link :to="{ name: 'espai'}">Espai</router-link></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item list-responsive">
         <a class="nav-link" ><router-link :to="{ name: 'blog'}">Blog</router-link></a>
       </li>
-     <li class="nav-item">
+     <li class="nav-item list-responsive">
         <a class="nav-link" ><router-link :to="{ name: 'biografia'}">Biografia</router-link></a>
       </li>
       <li class="nav-item">
