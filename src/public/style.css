@@ -2,14 +2,26 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 .page{
-   position: absolute;
-   width: inherit;
-   top: 0;
-   left: 0;
-   right: 0;
+ 
    
 }
 
+.col-lg-4{
+    margin: 0;
+    padding-top: 2.5em;
+
+}
+
+.card{
+    width: 18rem;
+}
+
+@media only screen and (max-width: 768px) {
+  
+.card{
+  width: 100%;  
+}
+}
 
 .img-fluid{
     border:none;
@@ -225,3 +237,94 @@ h1{
     }
 
    
+
+    /* CONTACTE */
+
+    .contacte1{
+        min-height: 30em;
+        background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 5em;
+        padding-top: 12.5em;
+            width: 100%;
+        }
+    
+    .contacte1 h4{
+        color: white;
+    }
+
+    /* IP */
+
+    .ip1{
+        min-height: 30em;
+        background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 5em;
+        padding-top: 12.5em;
+            width: 100%;
+        }
+    
+    .ip1 h4{
+        color: white;
+    }
+    .ip2{
+        min-height: 30em;
+        background:white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 5em;
+        padding-top: 5.5em;
+            width: 100%;
+            border-bottom: 2px solid;
+        }
+    
+    .ip2 h4{
+        color: black;
+    }
+
+    .ip3{
+        min-height: 30em;
+        background:white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 5em;
+        padding-top: 5.5em;
+            width: 100%;
+        }
+    
+    .ip3 h4{
+        color: black;
+    }
+
+
+    /* biografia */
+
+    .biografia{
+        min-height: 30em;
+        background:white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 5em;
+        padding-top: 5.5em;
+            width: 100%;
+    }
+
+    .bio-col{
+        padding-top:1em;
+    }
+
+
+    /* footer */
+
+
+    .footer{
+            min-height: 5em;
+        background:white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 2.5em;
+        padding-top: 2.5em;
+            width: 100%;
+    }

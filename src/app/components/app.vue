@@ -37,9 +37,21 @@
   </div>
 </nav>
 <transition name="router-anim"     enter-active-class="animated fadeIn"
-    leave-active-class="animated fadeOut">
+    leave-active-class="animated fadeOut"  mode="out-in">
  <router-view></router-view>
 </transition>
-
+    <div class="footer">
+          <div class="container text-center">
+            
+          
+             
+                
+     
+    <h4>Copyright © lauracc 2018</h4>
+       
+         
+     
+        </div>
+        </div>
     </div>
 </template>
