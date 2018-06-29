@@ -13,6 +13,7 @@ body{
 }
 
 .card{
+    border: none;
     width: 18rem;
 }
 
@@ -126,15 +127,13 @@ h1{
 }
 
 .home1{
-    min-height: 30em;
-    background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
-
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-bottom: 5em;
-   padding-top: 10em;
-    width: 100%;
+    min-height: 20em;
+        background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 7.5em;
+        padding-top: 7.5em;
+            width: 100%;
 }
 .home2{
     min-height: 30em;
@@ -205,13 +204,13 @@ h1{
 /* ESPAI */
 
 .espai1{
-    min-height: 30em;
-    background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-bottom: 5em;
-    padding-top: 12.5em;
-        width: 100%;
+    min-height: 20em;
+        background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 7.5em;
+        padding-top: 7.5em;
+            width: 100%;
     }
 
 .espai1 h4{
@@ -227,12 +226,12 @@ h1{
 /* BLOG */
 
 .blog1{
-    min-height: 30em;
+    min-height: 20em;
     background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 5em;
-    padding-top: 12.5em;
+    padding-bottom: 7.5em;
+    padding-top: 7.5em;
         width: 100%;
     }
 
@@ -241,12 +240,12 @@ h1{
     /* CONTACTE */
 
     .contacte1{
-        min-height: 30em;
+        min-height: 20em;
         background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
         background-repeat: no-repeat;
         background-size: cover;
-        padding-bottom: 5em;
-        padding-top: 12.5em;
+        padding-bottom: 7.5em;
+        padding-top: 7.5em;
             width: 100%;
         }
     
@@ -257,12 +256,12 @@ h1{
     /* IP */
 
     .ip1{
-        min-height: 30em;
+        min-height: 20em;
         background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
         background-repeat: no-repeat;
         background-size: cover;
-        padding-bottom: 5em;
-        padding-top: 12.5em;
+        padding-bottom: 7.5em;
+        padding-top: 7.5em;
             width: 100%;
         }
     
