@@ -1,11 +1,8 @@
 <template>
     <div>
-  <nav id="mySidenav" class=" sidenav ">
-   
-  <div class="container text-right close_x">
-  <a class="closebtn" onclick="closeNav()">&times;</a>
-
-  </div>
+  <nav id="mySidenav" class="sidenav">
+  
+ 
 <div class="text-center container texto_sidenav">
         <a  onclick="closeNav()" class="nav-link" ><router-link :to="{ name: 'activitats'}">Activitats</router-link></a>
 
@@ -20,8 +17,8 @@
 
         <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
           <div class="container">
-  <a class="navbar-brand" ><router-link :to="{ name: 'home'}">lauracc</router-link></a>
-  <button class="navbar-toggler" type="button" onclick="openNav()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a onclick="closeNav()" class="navbar-brand" ><router-link :to="{ name: 'home'}">lauracc</router-link></a>
+  <button id="hamburguer" class="navbar-toggler" type="button" onclick="openNav()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="icon-bar top-bar"></span>
           <span class="icon-bar middle-bar"></span>
           <span class="icon-bar bottom-bar"></span>

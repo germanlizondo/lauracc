@@ -16,18 +16,21 @@
   </head>
   <body>
 <div id="app"></div>
-
 <script>
-  function openNav() {
+function openNav() {
+  if (  document.getElementById("mySidenav").style.width === "100%") {
+    document.getElementById("mySidenav").style.width = "0%";
+    } else {
       document.getElementById("mySidenav").style.width = "100%";
-      document.getElementById("navbar").classList.add("nav-no");
-  }
-  
-  function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("navbar").classList.remove("nav-no");
-  }
-  </script>
+    }
+
+}
+
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+} 
+</script>
  <!-- VUE JS -->
 <script src="bundle.js"></script>
     <!-- Optional JavaScript -->
