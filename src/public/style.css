@@ -398,3 +398,21 @@ h1{
         padding-top: 2.5em;
             width: 100%;
     }
+
+
+    /* LOGIN */
+
+    .login_col{
+        padding-top: 2em; 
+        padding-bottom: 2em; 
+        background-color:rgba(255, 255, 255, 0.8)
+    }
+
+    .page-login{
+        min-height: 50em;
+        background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
+    }
+
+    .row_login{
+        padding-top: 10em;
+    }

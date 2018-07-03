@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-
+const session = require('express-session');
 
 const app = express();
 // mongoose.connect('mongodb://admin:public00@ds155699.mlab.com:55699/lauracc')
@@ -18,13 +18,23 @@ app.set('port',process.env.PORT || 3000);
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(session({secret: 'hellothere'}));
 
 //Routes
-app.get('/',(req,res)=>{
+app.post('/api/login',(req,res)=>{
 
-    res.sendFile(__dirname+'/public/index.html');
+   console.log(req.body);
+   res.sendStatus(200);
   
   });
+
+  app.get('/api/login',(req,res)=>{
+
+    
+    console.log("La sesion es: "+req.session);
+    res.end('done');
+   
+   });
 
 //Static Files
 

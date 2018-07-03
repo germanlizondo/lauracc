@@ -11,10 +11,17 @@ import contacte from './components/contacte.vue';
 import espai from './components/espai.vue';
 import home from './components/home.vue';
 import ip from './components/ip.vue';
+import admin from './components/admin.vue';
 
 
+import VueSession from 'vue-session';
 
-Vue.use(VueRouter);
+var options = {
+    persist: true
+}
+
+Vue.use(VueRouter)
+Vue.use(VueSession, options)
 
 const routes = [
     {path:'/',name: 'home', component: home},
@@ -23,7 +30,8 @@ const routes = [
     {path:'/espai',name: 'espai', component: espai},
     {path:'/blog', name: 'blog',component: blog},
     {path:'/biografia',name: 'biografia', component: biografia},
-    {path:'/contacte',name: 'contacte', component: contacte}
+    {path:'/contacte',name: 'contacte', component: contacte},
+    {path:'/admin',name: 'admin', component: admin}
 ];
 
 const router = new VueRouter({

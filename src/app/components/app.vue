@@ -12,6 +12,8 @@
         <a  onclick="closeNav()" class="nav-link" ><router-link :to="{ name: 'blog'}">Blog</router-link></a>
                 <a  onclick="closeNav()" class="nav-link" ><router-link :to="{ name: 'biografia'}">Biografia</router-link></a>
         <a  onclick="closeNav()" class="nav-link"><router-link :to="{ name: 'contacte'}">Contacte</router-link></a>
+<p class="nav-link" v-if="sesion">Benvinguda Laura &nbsp; <i  class="fas fa-sign-in-alt" v-on:click="logout()"></i></p>       </li>
+
 </div>
 </nav>
 
@@ -46,8 +48,10 @@
       <li class="nav-item">
         <a class="nav-link"><router-link :to="{ name: 'contacte'}">Contacte</router-link></a>
       </li>
+     
     </ul>
-    
+    <a class="navbar-brand" v-if="sesion">Benvinguda Laura &nbsp; <i  class="fas fa-sign-in-alt" v-on:click="logout()"></i></a>    
+
   </div>
   </div>
 </nav>
@@ -64,9 +68,44 @@
      
     <h4>Copyright © lauracc 2018</h4>
        
-         
-     
+         <router-link :to="{ name: 'admin'}" v-if="!sesion" ><i class="fas fa-user"></i></router-link> 
+   
         </div>
         </div>
     </div>
 </template>
+
+<script>
+
+
+
+export default {
+    data(){
+        
+          
+           sesion: false
+      
+    }, 
+    created(){
+    
+    },
+     beforeCreate: function () {
+    if (!this.$session.exists()) {
+      console.log("No existe");
+      this.sesion = false;
+       console.log("SESION: "+this.sesion);
+    }else{
+      console.log("si existe");
+       this.sesion = true;
+       console.log("SESION: "+this.sesion);
+    }
+  },
+    methods: {
+    logout: function () {
+     this.$session.destroy()
+     this.$router.go(this.$router.currentRoute)
+         }
+  }
+   
+}
+</script>

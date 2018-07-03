@@ -12,11 +12,13 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "mongoose": "^5.1.7",
     "morgan": "^1.9.0",
     "nodemon": "^1.17.5",
     "vue": "^2.5.16",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-session": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
