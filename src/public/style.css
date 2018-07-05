@@ -7,6 +7,15 @@ body{
 }
 
 
+.publica-boton{
+    background-color: rgb(67, 198, 172);
+    color: white;
+}
+.publica-boton:hover{
+    background-color: rgb(67, 198, 172,0.7);
+    border: 1px solid black;
+    color: white;
+}
 .card-body{
     margin: 0;
     padding: 0;
@@ -415,4 +424,14 @@ h1{
 
     .row_login{
         padding-top: 10em;
+    }
+
+    /* post*/
+
+    .post-titulo{
+        padding-bottom: 1em;
+    }
+
+    .post-cuerpo{
+        padding-top: 2em;
     }

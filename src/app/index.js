@@ -12,7 +12,7 @@ import espai from './components/espai.vue';
 import home from './components/home.vue';
 import ip from './components/ip.vue';
 import admin from './components/admin.vue';
-
+import post from './components/post.vue';
 
 import VueSession from 'vue-session';
 
@@ -31,10 +31,12 @@ const routes = [
     {path:'/blog', name: 'blog',component: blog},
     {path:'/biografia',name: 'biografia', component: biografia},
     {path:'/contacte',name: 'contacte', component: contacte},
-    {path:'/admin',name: 'admin', component: admin}
+    {path:'/admin',name: 'admin', component: admin},
+    {path:'/post/:name',component: post}
 ];
 
 const router = new VueRouter({
+    
     routes,   
 })
 new Vue({

@@ -7,77 +7,54 @@
             
                 
         <h4 class="display-4">Blog</h4>
+        <div class="text-right">
+          <i v-on:click="show = !show" class="fas fa-plus-circle"></i>
+        </div>
+  <transition
+    name="custom-classes-transition"
+    enter-active-class="animated bounceInLeft"
+    leave-active-class="animated bounceOutRight"  mode="out-in"
+  >
+        <div v-if="show">
+          <form @submit.prevent="addPublicacio">
+  <div  class="form-group" >
+    <label for="exampleFormControlInput1">Nova Publicació</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="títol"  v-model="publicacio.titulo">
+  </div>
+  <div  class="form-group" >
+
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Categoria"  v-model="publicacio.categoria">
+  </div>
+  <div class="form-group">
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descripció"  v-model="publicacio.descipcio"></textarea>
+  </div>
+  <div class="form-group">
+  
+    <textarea  class="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="Contingut"  v-model="publicacio.contingut"></textarea>
+  </div>
+
+      <button class="btn btn-lg  btn-block publica-boton" type="submit" >Publica</button>
+
+</form>
+        </div>
+        </transition>
         <div class="row">
-             <div class="col-lg-4 col-md-6 col-sm-12  col-xl-4 ">
+             <div class="col-lg-4 col-md-6 col-sm-12  col-xl-4 "  v-for="publi of publicacions" >
        <div class="card">
           
   <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Lorem ipsum
-       dolor sit amet consectetur adipisicing elit. Nesciunt, 
-       ducimus sint! Voluptas unde a reiciendis tempore blanditiis
-        quos dolores, adipisci eum rerum? Nam aut minima eligendi quidem 
-        quos similique perferendis! Some quick example text to build on 
-        the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">{{publi.titulo}}</h5>
+     <p class="card-text">{{publi.dia}}/{{publi.mes}}/{{publi.año}}  {{publi.hora}}:{{publi.min}}h</p>
+    <p class="card-text">{{publi.descripcio}}...<router-link :to="'/post/'+publi.titulo" v-if="!sesion" ><span>lee mas</span></router-link></p>
+    
   </div>
   </div>
 </div>
-      <div class="col-lg-4 col-md-6 col-sm-12  col-xl-4">
-       <div class="card">
-          
-  <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  </div>
-</div>
-<div class="col-lg-4 col-md-6 col-sm-12  col-xl-4">
-       <div class="card" >
-          
-  <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  </div>
-</div>
-       <div class="col-lg-4 col-md-6 col-sm-12  col-xl-4 ">
-       <div class="card">
-          
-  <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Lorem ipsum
-       dolor sit amet consectetur adipisicing elit. Nesciunt, 
-       ducimus sint! Voluptas unde a reiciendis tempore blanditiis
-        quos dolores, adipisci eum rerum? Nam aut minima eligendi quidem 
-        quos similique perferendis! Some quick example text to build on 
-        the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  </div>
-</div>
-       <div class="col-lg-4 col-md-6 col-sm-12  col-xl-4 ">
-       <div class="card">
-          
-  <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Lorem ipsum
-       dolor sit amet consectetur adipisicing elit. Nesciunt, 
-       ducimus sint! Voluptas unde a reiciendis tempore blanditiis
-        quos dolores, adipisci eum rerum? Nam aut minima eligendi quidem 
-        quos similique perferendis! Some quick example text to build on 
-        the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  </div>
-</div>
+  
+
+   
+      
 
 
 
@@ -90,3 +67,57 @@
         </div>
     </div>
 </template>
+
+<script>
+class Publicacio{
+    constructor(contingut,descipcio,categoria,titulo) {
+       this.categoria = categoria;
+    this.titulo= titulo;
+    this.contingut = contingut;
+ 
+        this.descipcio = descipcio;
+    }
+}
+export default {
+   data(){
+        return{
+           publicacio: new Publicacio(),
+            show: true,
+          publicacions:[],
+
+           
+        }
+    },
+      created(){
+        this.getAllPublicacions();
+    
+    },
+    methods:{
+              addPublicacio(){
+            
+           fetch('/api/postblog',{
+               method: 'POST',
+               body: JSON.stringify(this.publicacio),
+               headers:{
+                   'Accept': 'application/json',
+                   'Content-type': 'application/json'
+               }
+           }).then(this.$router.go(this.$router.currentRoute))
+
+           
+            
+           
+        },
+          getAllPublicacions(){
+            fetch('/api/getpublicacions')
+            .then(res => res.json())
+            .then(data =>{
+            
+                this.publicacions = data;
+             this.publicacions.reverse();
+         
+            } )
+        }
+    }
+}
+</script>
