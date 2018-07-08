@@ -4,17 +4,18 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 
 
+
 //models
 var Postblog = require('./models/postblog');
 
 
 const app = express();
- mongoose.connect('mongodb://admin:public00@ds155699.mlab.com:55699/lauracc')
+//  mongoose.connect('mongodb://admin:public00@ds155699.mlab.com:55699/lauracc')
+//  .then(db => console.log('Conected to Mongo OK!'))
+//  .catch(err=> console.error("ESSTO ES UN ERROR: "+err));
+ mongoose.connect('mongodb://localhost/lauracc')
  .then(db => console.log('Conected to Mongo OK!'))
- .catch(err=> console.error(err));
-// mongoose.connect('mongodb://localhost/lauracc')
-// .then(db => console.log('Conected to Mongo OK!'))
-// .catch(err=> console.error(err));
+.catch(err=> console.error(err));
 
 //settings
 app.set('port',process.env.PORT || 3000);
@@ -24,6 +25,7 @@ app.set('port',process.env.PORT || 3000);
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(session({secret: 'hellothere'}));
+
 
 //Routes
 app.post('/api/login',(req,res)=>{
@@ -100,6 +102,21 @@ newPublicacio.save((err)=>{
     }
 })
    });
+
+
+
+   app.delete('/api/eliminarpost/:id',async (req,res)=>{
+    var id = req.params.id;
+
+   await Postblog.findByIdAndRemove({_id:id},(err,Postblog)=>{
+        if(err) throw err;
+        console.log("ELIMINAT: "+Postblog);
+        res.json({
+            sendStatus: "Deleted"
+        })
+    })
+  
+   })
 
 //Static Files
 

@@ -32,6 +32,10 @@
   
     <textarea  class="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="Contingut"  v-model="publicacio.contingut"></textarea>
   </div>
+  <div class="custom-file">
+  <input type="file">
+
+</div>
 
       <button class="btn btn-lg  btn-block publica-boton" type="submit" >Publica</button>
 
@@ -45,9 +49,9 @@
   <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{publi.titulo}}</h5>
-     <p class="card-text">{{publi.dia}}/{{publi.mes}}/{{publi.año}}  {{publi.hora}}:{{publi.min}}h</p>
+     <p class="card-text">{{publi.dia}}/{{publi.mes}}/{{publi.año}}  {{publi.hora}}:{{publi.min}}h <i @click="eliminaPost(publi._id)" class="fas fa-trash-alt"></i></p>
     <p class="card-text">{{publi.descripcio}}...<router-link :to="'/post/'+publi.titulo" v-if="!sesion" ><span>lee mas</span></router-link></p>
-    
+   
   </div>
   </div>
 </div>
@@ -82,7 +86,7 @@ export default {
    data(){
         return{
            publicacio: new Publicacio(),
-            show: true,
+            show: false,
           publicacions:[],
 
            
@@ -117,6 +121,22 @@ export default {
              this.publicacions.reverse();
          
             } )
+        },
+          eliminaPost(id){
+             
+              if(confirm("Estas segur de eliminar? No podràs recuperar aquest post")){
+                console.log("EL ID ES: "+id)
+                 fetch('/api/eliminarpost/'+id,{
+               method: 'DELETE',
+                headers:{
+                   'Accept': 'application/json',
+                   'Content-type': 'application/json'
+               }
+           }).then(this.$router.go(this.$router.currentRoute))
+              }
+              
+   
+        
         }
     }
 }
